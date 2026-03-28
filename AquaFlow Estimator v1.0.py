@@ -74,7 +74,7 @@ else:
     PROJECT INVOICE SUMMARY
     ---------------------------
     Total Boring Depth: {total_boring_depth} ft
-    Pipes Required    : {int(required_pipes:)} pieces
+    Pipes Required    : {int(required_pipes)} pieces
     ---------------------------
     Boring Labor Cost : Rs.{total_boring_cost:,.2f}
     pipes Material    : Rs.{total_pipe_cost:,.2f}
