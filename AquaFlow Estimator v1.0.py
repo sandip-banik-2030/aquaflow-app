@@ -63,8 +63,8 @@ else:
 
     #Key metrics display
     res_col1, res_col2 = st.columns(2)
-    res_col1.metric(" :green[Total Boring]", f"{total_boring_depth} ft")
-    res_col2.metric(" :green[Pipes Required]", f"{int(required_pipes:)} pcs")
+    res_col1.metric("Total Boring", f"{total_boring_depth} ft")
+    res_col2.metric("Pipes Required", f"{int(required_pipes)} pcs")
 
     st.write(f"### Net Total Payable: Rs.{grand_total:,.2f}")
     st.info("# Tips: Check the voltage before install the pump!")
