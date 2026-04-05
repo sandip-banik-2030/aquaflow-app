@@ -44,14 +44,16 @@ else:
     grand_total = total_pipe_cost + total_boring_cost + pump_cost
 
     #. automatic HP calculation
-    if total_boring_depth <= 100:
-        pump_hp = "1.0 HP"
-    elif total_boring_depth <= 200:
-        pump_hp = "1.5 HP"
-    elif total_boring_depth <= 300:
-        pump_hp = "2.0 HP"
+    if total_boring_depth <= 120:
+        pump_hp = "1.0 HP(V4 Submersible)"
+    elif total_boring_depth <= 220:
+        pump_hp = "1.5 HP (V4 Submersible)"
+    elif total_boring_depth <= 320:
+        pump_hp = "2.0 HP (V4 Submersible)"
+    elif total_boring_depth <= 450:
+        pump_hp = "3.0 HP (V4 Submersible)"
     else:
-        pump_hp = "3.0 HP or more (Heavy Duty)"
+        pump_hp = "5.0 HP (Heavy Duty / V6 Recommended)"
 
     #for display the pump calculation part
     st.write("### :green[Final Estimation Summary]")
@@ -63,8 +65,8 @@ else:
 
     #Key metrics display
     res_col1, res_col2 = st.columns(2)
-    res_col1.metric("Total Boring", f"{total_boring_depth} ft")
-    res_col2.metric("Pipes Required", f"{int(required_pipes)} pcs")
+    res_col1.metric(" :green[Total Boring]", f"{total_boring_depth} ft")
+    res_col2.metric(" :green[Pipes Required]", f"{int(required_pipes:)} pcs")
 
     st.write(f"### Net Total Payable: Rs.{grand_total:,.2f}")
     st.info("# Tips: Check the voltage before install the pump!")
@@ -74,7 +76,7 @@ else:
     PROJECT INVOICE SUMMARY
     ---------------------------
     Total Boring Depth: {total_boring_depth} ft
-    Pipes Required    : {int(required_pipes)} pieces
+    Pipes Required    : {int(required_pipes:)} pieces
     ---------------------------
     Boring Labor Cost : Rs.{total_boring_cost:,.2f}
     pipes Material    : Rs.{total_pipe_cost:,.2f}
@@ -87,6 +89,9 @@ else:
 
     st.success("""Software active. Take a SCREENSHOT to SHARE with the client.
                Thank you for using AquaFlow Estimator!""")
+    #7. Disclaimer Code
+    st.warning(""" **Disclaimer & Saftey Note:** It is an ESTIMATED Calculation. The correct power of a pump depends upon Brand Modle(stage), Friction of pipe and Voltage.
+    before buying a pump consult an expert mechanic.""")
 
 
 
