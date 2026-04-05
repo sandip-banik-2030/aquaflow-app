@@ -66,7 +66,7 @@ else:
     #Key metrics display
     res_col1, res_col2 = st.columns(2)
     res_col1.metric(" :green[Total Boring]", f"{total_boring_depth} ft")
-    res_col2.metric(" :green[Pipes Required]", f"{int(required_pipes:)} pcs")
+    res_col2.metric(" :green[Pipes Required]", f"{int(required_pipes)} pcs")
 
     st.write(f"### Net Total Payable: Rs.{grand_total:,.2f}")
     st.info("# Tips: Check the voltage before install the pump!")
@@ -76,7 +76,7 @@ else:
     PROJECT INVOICE SUMMARY
     ---------------------------
     Total Boring Depth: {total_boring_depth} ft
-    Pipes Required    : {int(required_pipes:)} pieces
+    Pipes Required    : {int(required_pipes)} pieces
     ---------------------------
     Boring Labor Cost : Rs.{total_boring_cost:,.2f}
     pipes Material    : Rs.{total_pipe_cost:,.2f}
